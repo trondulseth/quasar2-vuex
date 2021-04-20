@@ -1,5 +1,5 @@
 import { IUser } from 'src/entities';
 
-export interface IUserStore {
+export interface IUserState {
   activeUser: IUser | undefined;
 }

@@ -1,8 +1,8 @@
 import { IUser } from 'src/entities';
 import { GetterTree, Store } from 'vuex';
-import { StateInterface } from '..';
-import { IUserStore } from './user.state.types';
+import { StoreInterface } from '..';
+import { IUserState } from './user.state.types';
 
-export interface IGetters extends GetterTree<IUserStore, StateInterface> {
-  getActiveUser(this: Store<IUserStore>, state: IUserStore): IUser | undefined;
+export interface IUserGetters extends GetterTree<IUserState, StoreInterface> {
+  getActiveUser(this: Store<IUserState>, state: IUserState): IUser | undefined;
 }

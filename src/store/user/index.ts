@@ -1,11 +1,12 @@
-import { Module } from 'vuex';
-import { StateInterface } from '../index';
-import state from './user.state';
-import { IUserStore } from './user.state.types';
+import { IUserStore } from './index.types';
+import { UserState } from './user.state';
+import { UserMutations } from './user.mutations';
+import { UserActions } from './user.actions';
+import { UserGetters } from './user.getters';
 
-const userStore: Module<IUserStore, StateInterface> = {
-  namespaced: true,
-  state,
+export const UserStore: IUserStore = {
+  state: UserState,
+  mutations: UserMutations,
+  actions: UserActions,
+  getters: UserGetters,
 };
-
-export default userStore;

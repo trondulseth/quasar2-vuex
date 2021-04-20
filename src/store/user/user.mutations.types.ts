@@ -1,11 +1,6 @@
 import { IUser } from 'src/entities';
-import { MutationTree, Store } from 'vuex';
-import { StateInterface } from '..';
+import { IUserState } from './user.state.types';
 
-export interface IUserMutations extends MutationTree<StateInterface> {
-  setActiveUser(
-    this: Store<StateInterface>,
-    state: StateInterface,
-    payload: IUser
-  ): void;
+export interface IUserMutations {
+  setActiveUser(UserState: IUserState, payload: IUser): void;
 }

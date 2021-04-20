@@ -1,9 +1,9 @@
 import { IUser } from 'src/entities';
-import { StateInterface } from '..';
 import { IUserMutations } from './user.mutations.types';
+import { IUserState } from './user.state.types';
 
-export const userMutations: IUserMutations = {
-  setActiveUser(state: StateInterface, payload: IUser): void {
-    state.modules.userStore.activeUser = payload;
+export const UserMutations: IUserMutations = {
+  setActiveUser(UserState: IUserState, payload: IUser): void {
+    UserState.activeUser = payload;
   },
 };

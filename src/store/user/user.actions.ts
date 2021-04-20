@@ -5,10 +5,9 @@ import { Context, IUserActions } from './user.actions.types';
 const userService: IUserService = new UserService();
 // this should probably be imported and not declared here
 
-export const userActions: IUserActions = {
-  setActiveUser(context: Context, payload: IUser): void {
+export const UserActions: IUserActions = {
+  setActiveUser(store: Context, payload: IUser): void {
     const user: IUser = userService.registerUser(payload);
-    // call mutation with result from service:
-    context.commit.setActiveUser(context, user);
+    store.commit('setActiveUser', user);
   },
 };

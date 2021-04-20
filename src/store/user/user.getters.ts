@@ -1,9 +1,9 @@
 import { IUser } from 'src/entities';
-import { IGetters } from './user.getters.types';
-import { IUserStore } from './user.state.types';
+import { IUserGetters } from './user.getters.types';
+import { IUserState } from './user.state.types';
 
-export const getters: IGetters = {
-  getActiveUser(state: IUserStore): IUser | undefined {
+export const UserGetters: IUserGetters = {
+  getActiveUser(state: IUserState): IUser | undefined {
     const data = state.activeUser;
     if (!data) {
       return;

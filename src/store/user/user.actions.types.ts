@@ -1,14 +1,9 @@
 import { IUser } from 'src/entities';
-import { ActionContext, ActionTree, Store } from 'vuex';
-import { StateInterface } from '..';
-import { IUserStore } from './user.state.types';
+import { StoreInterface } from '..';
+import { IUserStore } from './index.types';
+import { ActionContext } from 'vuex';
 
-export type Context = ActionContext<IUserStore, StateInterface>;
-
-export interface IUserActions extends ActionTree<IUserStore, StateInterface> {
-  setActiveUser(
-    this: Store<StateInterface>,
-    context: Context,
-    payload: IUser
-  ): void;
+export type Context = ActionContext<IUserStore, StoreInterface>;
+export interface IUserActions {
+  setActiveUser(store: Context, payload: IUser): void;
 }
